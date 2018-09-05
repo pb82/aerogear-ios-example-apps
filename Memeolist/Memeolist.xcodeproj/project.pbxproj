@@ -28,7 +28,7 @@
 		88237365213684A400E07C2A /* CommentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88237364213684A400E07C2A /* CommentsTableViewController.swift */; };
 		882373672136997100E07C2A /* CommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882373662136997100E07C2A /* CommentsViewController.swift */; };
 		882373692136B08200E07C2A /* CommentsViewController.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 882373682136B08200E07C2A /* CommentsViewController.graphql */; };
-		8A58B0B420EC18CA00ABE5B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A58B0B320EC18CA00ABE5B1 /* Assets.xcassets */; };
+		8AB761C6213F113900B60A16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A58B0B320EC18CA00ABE5B1 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -308,12 +308,12 @@
 				1EA7037C212EFA6500BA8473 /* MemesTableViewCell.graphql in Resources */,
 				0195B0EA20F4E040000740E4 /* LoginViewController.xib in Resources */,
 				01CF3BCE20EBC3D80026EC7F /* schema.json in Resources */,
+				8AB761C6213F113900B60A16 /* Assets.xcassets in Resources */,
 				01CF3BB220EBA7C30026EC7F /* LaunchScreen.storyboard in Resources */,
 				01CF3BAD20EBA7C20026EC7F /* Main.storyboard in Resources */,
 				7A0BA6CF212D94E1003055F0 /* CreateMemeController.graphql in Resources */,
 				0195B0EC20F513D9000740E4 /* mobile-services.json in Resources */,
 				7A0BA6D1212D94E8003055F0 /* MemesListViewController.graphql in Resources */,
-				8A58B0B420EC18CA00ABE5B1 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
