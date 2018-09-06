@@ -76,19 +76,6 @@
                                             <color key="textColor" red="1" green="0.25098039215686274" blue="0.50588235294117645" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0h" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C7B-0f-tBU" userLabel="time">
-                                            <rect key="frame" x="344" y="34.5" width="21" height="20"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.57414853570000002" green="0.57416242360000003" blue="0.57415497299999996" alpha="0.95478381849315064" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="time" translatesAutoresizingMaskIntoConstraints="NO" id="NtG-sI-rtM">
-                                            <rect key="frame" x="321" y="34.5" width="20" height="20"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="20" id="N60-Rh-4wc"/>
-                                                <constraint firstAttribute="width" constant="20" id="ipF-nJ-v4k"/>
-                                            </constraints>
-                                        </imageView>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chat_bubble_outline" translatesAutoresizingMaskIntoConstraints="NO" id="22q-01-khm" userLabel="meme">
                                             <rect key="frame" x="10" y="79.5" width="355" height="355"/>
                                             <constraints>
@@ -114,10 +101,7 @@
                                     <constraints>
                                         <constraint firstItem="NeK-mF-YeS" firstAttribute="leading" secondItem="ZQ5-W3-b26" secondAttribute="leadingMargin" id="1Ga-Az-PL4"/>
                                         <constraint firstItem="22q-01-khm" firstAttribute="leading" secondItem="ZQ5-W3-b26" secondAttribute="leading" constant="10" id="1q5-LJ-47o"/>
-                                        <constraint firstItem="C7B-0f-tBU" firstAttribute="leading" secondItem="NtG-sI-rtM" secondAttribute="trailing" constant="3" id="5yU-i5-CIR"/>
                                         <constraint firstItem="nve-BR-GbC" firstAttribute="leading" secondItem="JoP-FA-YF4" secondAttribute="trailing" constant="4" id="6HQ-nr-o3f"/>
-                                        <constraint firstAttribute="trailing" secondItem="C7B-0f-tBU" secondAttribute="trailing" constant="10" id="6Uu-UL-5Uq"/>
-                                        <constraint firstItem="NtG-sI-rtM" firstAttribute="height" secondItem="C7B-0f-tBU" secondAttribute="height" id="6ee-rq-oZu"/>
                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="nve-BR-GbC" secondAttribute="trailing" constant="20" symbolic="YES" id="AAS-tJ-WAt"/>
                                         <constraint firstItem="JoP-FA-YF4" firstAttribute="leading" secondItem="ZQ5-W3-b26" secondAttribute="leading" constant="8" id="Bp1-ai-8Kb"/>
                                         <constraint firstItem="22q-01-khm" firstAttribute="centerX" secondItem="ZQ5-W3-b26" secondAttribute="centerX" id="EN5-BX-n4X"/>
@@ -128,13 +112,11 @@
                                         <constraint firstItem="NeK-mF-YeS" firstAttribute="top" secondItem="ZQ5-W3-b26" secondAttribute="topMargin" constant="8" id="ak1-hM-mxJ"/>
                                         <constraint firstItem="eGt-1T-Bu3" firstAttribute="leading" secondItem="d25-1H-Bji" secondAttribute="trailing" constant="20" id="gIv-nA-Pzw"/>
                                         <constraint firstItem="eGt-1T-Bu3" firstAttribute="top" secondItem="22q-01-khm" secondAttribute="bottom" constant="10" id="gNW-8Y-Col"/>
-                                        <constraint firstItem="C7B-0f-tBU" firstAttribute="centerY" secondItem="dQt-Ku-J82" secondAttribute="centerY" id="hl6-9r-Uzl"/>
                                         <constraint firstAttribute="trailing" secondItem="22q-01-khm" secondAttribute="trailing" constant="10" id="iop-nU-vrK"/>
                                         <constraint firstItem="dQt-Ku-J82" firstAttribute="leading" secondItem="NeK-mF-YeS" secondAttribute="trailing" constant="10" id="jWz-Ui-ZjF"/>
                                         <constraint firstItem="d25-1H-Bji" firstAttribute="top" secondItem="eGt-1T-Bu3" secondAttribute="top" id="owT-Ug-jzi"/>
                                         <constraint firstAttribute="bottom" secondItem="eGt-1T-Bu3" secondAttribute="bottom" constant="10" id="pBH-aY-LIN"/>
                                         <constraint firstItem="d25-1H-Bji" firstAttribute="centerY" secondItem="nve-BR-GbC" secondAttribute="centerY" id="vdZ-Zp-1q1"/>
-                                        <constraint firstItem="NtG-sI-rtM" firstAttribute="centerY" secondItem="NeK-mF-YeS" secondAttribute="centerY" id="wuL-1O-Vtt"/>
                                         <constraint firstItem="dQt-Ku-J82" firstAttribute="centerY" secondItem="NeK-mF-YeS" secondAttribute="centerY" id="xsx-0j-gwz"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -394,6 +376,5 @@
         <image name="favorite_border" width="24" height="24"/>
         <image name="placeholder" width="850" height="845"/>
         <image name="profile" width="101" height="126"/>
-        <image name="time" width="256" height="256"/>
     </resources>
 </document>
