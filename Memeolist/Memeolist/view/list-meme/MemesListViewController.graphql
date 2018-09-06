@@ -5,15 +5,20 @@ query AllMemes {
 }
 
 fragment MemeDetails on Meme {
-   id
-   photourl
-   owner
-   likes
-   comments {
-     id
-     comment
-     owner
-   }
+  id
+  photourl
+  likes
+  owner {
+    id
+    displayname
+    email
+    pictureurl
+  }
+  comments {
+    id
+    comment
+    owner
+  }
 }
 
 subscription memeAdded {

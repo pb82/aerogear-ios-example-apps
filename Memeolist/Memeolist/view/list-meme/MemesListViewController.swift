@@ -55,8 +55,8 @@ class MemesListViewController: UITableViewController {
                 return
             }
             
-            if let memeDetails = result?.data?.memeAdded {
-                self.memes.append( MemeDetails(id: memeDetails.id, photourl: memeDetails.photourl, likes: memeDetails.likes, comments: []))
+            if let memeDetails = result?.data?.memeAdded.fragments.memeDetails {
+                self.memes.append(MemeDetails(id: memeDetails.id, photourl: memeDetails.photourl, likes: memeDetails.likes, owner: memeDetails.owner, comments: []))
             }
             self.tableView.reloadData()
         })
@@ -94,7 +94,7 @@ class MemesListViewController: UITableViewController {
         if (segue.identifier == "CommentsSegue") {
             if let button = sender as? UIButton, let cell = button.superview?.superview as? MemesTableViewCell {
                 let destination = segue.destination as? CommentsViewController
-                destination?.meme = memes?.first(where: { $0.id == cell.memeId })
+                destination?.meme = memes.first(where: { ($0?.id)! == cell.memeId! }) as? MemeDetails
             }
         }
     }
