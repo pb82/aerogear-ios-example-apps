@@ -20,8 +20,6 @@ class MemesListViewController: UITableViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-       
-        
         loadData()
     }
 
@@ -56,7 +54,7 @@ class MemesListViewController: UITableViewController {
             }
             
             if let memeDetails = result?.data?.memeAdded.fragments.memeDetails {
-                self.memes.append(MemeDetails(id: memeDetails.id, photourl: memeDetails.photourl, likes: memeDetails.likes, owner: memeDetails.owner, comments: []))
+                self.memes.insert(MemeDetails(id: memeDetails.id, photourl: memeDetails.photourl, likes: memeDetails.likes, owner: memeDetails.owner, comments: []), at: 0)
             }
             self.tableView.reloadData()
         })
