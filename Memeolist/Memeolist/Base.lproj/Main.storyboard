@@ -37,22 +37,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="428" id="TNy-o3-ukg" customClass="MemesTableViewCell" customModule="Memeolist" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="428"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="488" id="TNy-o3-ukg" customClass="MemesTableViewCell" customModule="Memeolist" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="488"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" tableViewCell="TNy-o3-ukg" id="ZQ5-W3-b26">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="427.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="487.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="NeK-mF-YeS" userLabel="avatar">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NeK-mF-YeS" userLabel="avatar">
                                             <rect key="frame" x="16" y="19" width="50" height="50.5"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="NeK-mF-YeS" secondAttribute="height" multiplier="1:1" id="faq-VO-Ih3"/>
                                                 <constraint firstAttribute="width" constant="50" id="jVa-2F-xHU"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="admin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dQt-Ku-J82" userLabel="user">
-                                            <rect key="frame" x="76" y="35.5" width="45.5" height="18"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AeroGear" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dQt-Ku-J82" userLabel="user">
+                                            <rect key="frame" x="76" y="35.5" width="69.5" height="18"/>
                                             <accessibility key="accessibilityConfiguration">
                                                 <accessibilityTraits key="traits" none="YES"/>
                                             </accessibility>
@@ -76,7 +76,7 @@
                                             <color key="textColor" red="1" green="0.25098039215686274" blue="0.50588235294117645" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chat_bubble_outline" translatesAutoresizingMaskIntoConstraints="NO" id="22q-01-khm" userLabel="meme">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="22q-01-khm" userLabel="meme">
                                             <rect key="frame" x="10" y="79.5" width="355" height="355"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="22q-01-khm" secondAttribute="height" multiplier="1:1" id="DW7-gB-wD5"/>
@@ -91,7 +91,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eGt-1T-Bu3" userLabel="commentsButton">
-                                            <rect key="frame" x="343" y="444.5" width="24" height="24"/>
+                                            <rect key="frame" x="343" y="444.5" width="24" height="33"/>
                                             <state key="normal" image="chat_bubble_outline"/>
                                             <connections>
                                                 <segue destination="fUB-Hq-a1o" kind="show" identifier="CommentsSegue" id="5Cf-NV-CCG"/>
@@ -375,6 +375,5 @@
         <image name="favorite" width="18" height="18"/>
         <image name="favorite_border" width="24" height="24"/>
         <image name="placeholder" width="850" height="845"/>
-        <image name="profile" width="101" height="126"/>
     </resources>
 </document>
