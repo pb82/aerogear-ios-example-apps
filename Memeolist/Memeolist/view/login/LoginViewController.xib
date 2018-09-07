@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -14,8 +14,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="Memeolist" customModuleProvider="target">
             <connections>
                 <outlet property="loginButton" destination="H18-Xx-eiQ" id="nna-su-BkQ"/>
-                <outlet property="pageControl" destination="vmB-K7-yAI" id="oRP-iV-DJl"/>
-                <outlet property="scrollView" destination="VSF-dX-pcn" id="hib-Kh-fec"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -24,25 +22,17 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" alwaysBounceVertical="YES" alwaysBounceHorizontal="YES" pagingEnabled="YES" indicatorStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="VSF-dX-pcn">
-                    <rect key="frame" x="20" y="200" width="374" height="373"/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="VSF-dX-pcn" secondAttribute="height" multiplier="1:1" constant="1" id="GTv-Wd-vsG"/>
-                    </constraints>
-                </scrollView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="ro5-Ah-o8n">
-                    <rect key="frame" x="105" y="25" width="199" height="155.33333333333334"/>
+                    <rect key="frame" x="54.666666666666657" y="25.999999999999986" width="304.66666666666674" height="236.66666666666663"/>
                     <constraints>
-                        <constraint firstAttribute="width" secondItem="ro5-Ah-o8n" secondAttribute="height" multiplier="32:25" id="6Km-cq-eiT"/>
+                        <constraint firstAttribute="width" secondItem="ro5-Ah-o8n" secondAttribute="height" multiplier="161:125" id="l9w-Dt-lCb"/>
                     </constraints>
                 </imageView>
                 <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H18-Xx-eiQ">
-                    <rect key="frame" x="107" y="666" width="200" height="50"/>
+                    <rect key="frame" x="30" y="656" width="354" height="50"/>
                     <color key="backgroundColor" red="0.074509803921568626" green="0.55294117647058827" blue="0.81176470588235294" alpha="0.36638484589041098" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="50" id="Be3-PW-Gfa"/>
-                        <constraint firstAttribute="width" secondItem="H18-Xx-eiQ" secondAttribute="height" multiplier="4:1" id="MHR-2E-By4"/>
-                        <constraint firstAttribute="width" constant="200" id="RQA-Tw-Vpb"/>
+                        <constraint firstAttribute="height" constant="50" id="HY1-MV-YLl"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                     <size key="titleShadowOffset" width="29" height="20"/>
@@ -51,34 +41,33 @@
                         <action selector="onLoginPressed:" destination="-1" eventType="touchUpInside" id="TTQ-0R-MEc"/>
                     </connections>
                 </button>
-                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="vmB-K7-yAI">
-                    <rect key="frame" x="147.33333333333334" y="583" width="120.00000000000003" height="50"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login" translatesAutoresizingMaskIntoConstraints="NO" id="9ln-Vz-VQs" userLabel="image">
+                    <rect key="frame" x="30" y="282.66666666666674" width="354" height="353.33333333333326"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="120" id="bam-k6-hcc"/>
-                        <constraint firstAttribute="height" constant="50" id="naV-xU-ZST"/>
+                        <constraint firstAttribute="width" secondItem="9ln-Vz-VQs" secondAttribute="height" multiplier="1:1" id="br8-lm-djg"/>
                     </constraints>
-                    <color key="pageIndicatorTintColor" red="0.074509803921568626" green="0.55294117647058827" blue="0.81176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <color key="currentPageIndicatorTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                </pageControl>
+                </imageView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="vmB-K7-yAI" firstAttribute="centerX" secondItem="VSF-dX-pcn" secondAttribute="centerX" id="4fD-zo-ZRV"/>
-                <constraint firstItem="H18-Xx-eiQ" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="5gW-nl-OMz"/>
-                <constraint firstItem="ro5-Ah-o8n" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="105" id="KqP-Ft-Y3i"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="VSF-dX-pcn" secondAttribute="trailing" constant="20" id="MgN-b9-KC3"/>
-                <constraint firstItem="vmB-K7-yAI" firstAttribute="top" secondItem="VSF-dX-pcn" secondAttribute="bottom" constant="10" id="S5w-RH-13s"/>
-                <constraint firstItem="VSF-dX-pcn" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="200" id="bpd-Pm-ubC"/>
-                <constraint firstItem="ro5-Ah-o8n" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="5" id="dbb-nA-i5h"/>
-                <constraint firstItem="VSF-dX-pcn" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="jDW-2T-tY4"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="H18-Xx-eiQ" secondAttribute="bottom" constant="20" id="n3a-eG-cxl"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ro5-Ah-o8n" secondAttribute="trailing" constant="110" id="oVs-ej-DXB"/>
+                <constraint firstAttribute="trailing" secondItem="H18-Xx-eiQ" secondAttribute="trailing" constant="30" id="3Cv-GN-pJu"/>
+                <constraint firstItem="9ln-Vz-VQs" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="GEN-HS-Inf"/>
+                <constraint firstItem="9ln-Vz-VQs" firstAttribute="top" secondItem="ro5-Ah-o8n" secondAttribute="bottom" constant="20" id="IVS-8o-bJb"/>
+                <constraint firstAttribute="bottom" secondItem="H18-Xx-eiQ" secondAttribute="bottom" constant="30" id="XVf-Nh-6qU"/>
+                <constraint firstItem="H18-Xx-eiQ" firstAttribute="top" secondItem="9ln-Vz-VQs" secondAttribute="bottom" constant="20" id="Y6T-ih-k1d"/>
+                <constraint firstItem="9ln-Vz-VQs" firstAttribute="leading" secondItem="H18-Xx-eiQ" secondAttribute="leading" id="aCz-Jt-9zf"/>
+                <constraint firstItem="ro5-Ah-o8n" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="26" id="m4l-cR-j7A"/>
+                <constraint firstItem="ro5-Ah-o8n" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="nLC-tL-kkX"/>
+                <constraint firstItem="9ln-Vz-VQs" firstAttribute="trailing" secondItem="H18-Xx-eiQ" secondAttribute="trailing" id="xAp-I4-HNJ"/>
+                <constraint firstItem="H18-Xx-eiQ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="ytU-7u-hmD"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="24.5" y="51"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <viewLayoutGuide key="safeArea" id="j2i-Iv-c59"/>
+            <point key="canvasLocation" x="24" y="51"/>
         </view>
     </objects>
     <resources>
+        <image name="login" width="250" height="250"/>
         <image name="logo" width="135" height="125"/>
     </resources>
 </document>

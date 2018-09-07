@@ -3,7 +3,7 @@ import UIKit
 
 class CommentsViewController: UIViewController {
     
-    var meme: AllMemesQuery.Data.AllMeme?
+    var meme: MemeDetails?
     var tableViewController: CommentsTableViewController?
 
     @IBOutlet weak var commentTextView: UITextView!
@@ -24,7 +24,7 @@ class CommentsViewController: UIViewController {
         AgsSync.instance.client?.perform(mutation: PostCommentMutation(memeid: id, comment: commentTextView.text, owner: owner)) { result, error in
             if let comment = result?.data?.postComment {
                 self.commentTextView.text = ""
-                self.meme?.comments.insert(AllMemesQuery.Data.AllMeme.Comment(id: comment.id, comment: comment.comment, owner: comment.owner), at: 0)
+                self.meme?.comments.insert(MemeDetails.Comment(id: comment.id, comment: comment.comment, owner: comment.owner), at: 0)
                 self.tableViewController?.meme = self.meme
                 self.tableViewController?.tableView.reloadData()
             } else {

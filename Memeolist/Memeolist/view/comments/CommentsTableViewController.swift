@@ -3,7 +3,7 @@ import UIKit
 
 class CommentsTableViewController: UITableViewController {
     
-    var meme: AllMemesQuery.Data.AllMeme?
+    var meme: MemeDetails?
 
     override func viewDidLoad() {
         super.viewDidLoad()
