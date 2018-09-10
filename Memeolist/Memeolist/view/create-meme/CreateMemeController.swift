@@ -2,7 +2,6 @@ import AGSSync
 import UIImageCropper
 import UIKit
 
-
 class CreateMemeController: UIViewController,
     UINavigationControllerDelegate,
     UIImageCropperProtocol {
@@ -18,6 +17,13 @@ class CreateMemeController: UIViewController,
 
     private let imagePicker = UIImagePickerController()
     private let cropper = UIImageCropper(cropRatio: 1)
+    
+    private let strokeTextAttributes: [NSAttributedStringKey : Any] = [
+        NSAttributedStringKey.strokeColor : UIColor.black,
+        NSAttributedStringKey.foregroundColor : UIColor.white,
+        NSAttributedStringKey.strokeWidth : -2.0,
+        ]
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,29 +59,22 @@ class CreateMemeController: UIViewController,
                                                      top: self.topTextEdit.text ?? "",
                                                      bottom: self.bottomTextEdit.text ?? "")
         
-        //TODO note owner is still hard-coded, should be changed to real user
-        AgsSync.instance.client?.perform(mutation: CreateMemeMutation(photourl: url, owner: "David Duchovny")) { result, error in
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        AgsSync.instance.client?.perform(mutation: CreateMemeMutation(photourl: url, owner: appDelegate.profile.id)) { result, error in
             indicator.stopAnimating()
             if result != nil {
-                let alert = UIAlertController(title: "Success", message: "Meme created", preferredStyle: UIAlertControllerStyle.alert)
-                let action = UIAlertAction(title: "OK", style: .default, handler: {
-                    action in self.navigationController?.popToRootViewController(animated: true)
-                })
-                alert.addAction(action)
-                self.present(alert, animated: true)
+                self.navigationController?.popToRootViewController(animated: true)
             } else {
                 let alert = UIAlertController(title: "Error", message: "Failed to create meme", preferredStyle: UIAlertControllerStyle.alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .default))
                 self.present(alert, animated: true)
             }
-
             return
-    
         }
     
     }
 
-    @IBAction func createMemeAction(_ sender: Any) {
+    @IBAction func createMemeAction(_ sender: UIButton) {
         if self.topTextEdit.text?.isEmpty ?? false || self.bottomTextEdit.text?.isEmpty ?? false {
             let alert = UIAlertController(title: "Validation error", message: "Missing required fields", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default))
@@ -109,10 +108,11 @@ class CreateMemeController: UIViewController,
     }
 
     @IBAction func topTextChanged(_ sender: Any) {
-        topText.text = topTextEdit.text
+        topText.attributedText = NSAttributedString(string: (topTextEdit.text?.uppercased())!, attributes: strokeTextAttributes)
+
     }
 
     @IBAction func bottomTextChanged(_ sender: Any) {
-        bottomText.text = bottomTextEdit.text
+        bottomText.attributedText = NSAttributedString(string: (bottomTextEdit.text?.uppercased())!, attributes: strokeTextAttributes)
     }
 }

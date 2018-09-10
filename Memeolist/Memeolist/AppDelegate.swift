@@ -9,6 +9,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var profile: ProfileDetails!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         IQKeyboardManager.shared.enable = true
@@ -19,14 +20,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let transport = AgsSync.instance.transport {
             transport.headerProvider = AgsAuth.instance.getAuthHeaderProvider()
         }
-        guard let _ = try! AgsAuth.instance.currentUser() else {
+        
+        guard let user = try! AgsAuth.instance.currentUser() else {
             let rootViewController = LoginViewController()
             window?.rootViewController = UINavigationController(rootViewController: rootViewController)
             window?.makeKeyAndVisible()
             return true
         }
         
+        createOrRetrieveProfile(user: user)
+        
         return true
+
     }
 
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey: Any] = [:]) -> Bool {
@@ -39,4 +44,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         return false
     }
+    
+    public func createOrRetrieveProfile(user: User) {
+        AgsSync.instance.client?.fetch(query: ProfileQuery(email: user.email!), cachePolicy: .fetchIgnoringCacheData) { result, error in
+            if let error = error {
+                NSLog("Error while fetching query: \(error.localizedDescription)")
+                let alert = UIAlertController(title: "Error", message: "Failed to fetch profile", preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default))
+                self.window?.rootViewController?.present(alert, animated: true, completion: nil)
+                return
+            }
+            
+            let profiles = result?.data?.profile
+            if(profiles != nil && (profiles?.count)! > 0) {
+                let profile = profiles![0]?.fragments.profileDetails
+                self.profile = profile
+            } else {
+                self.createProfile(user: user)
+            }
+        }
+    }
+    
+    public func createProfile(user: User) {
+        AgsSync.instance.client?.perform(mutation: CreateProfileMutation(email: user.email!, displayname: user.fullName!, pictureurl: "https://randomuser.me/api/portraits/lego/1.jpg")) { result, error in
+            if let profile = result?.data?.createProfile.fragments.profileDetails {
+                self.profile = profile
+            } else {
+                let alert = UIAlertController(title: "Error", message: "Failed to create profile", preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default))
+                self.window?.rootViewController?.present(alert, animated: true)
+            }
+            return
+        }
+    }
+    
 }

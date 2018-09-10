@@ -1,13 +1,12 @@
-## Creating meme
 mutation CreateMeme($photourl: String!, $owner: ID!) {
   createMeme(photourl: $photourl, owner: $owner) {
     id
     photourl
-    owner {
-        id
-        email
-        displayname
-    }
     likes
+    owner {
+      id
+      email
+      displayname
+    }
   }
 }

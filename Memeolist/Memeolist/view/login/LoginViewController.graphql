@@ -1,0 +1,18 @@
+mutation createProfile($email: String!, $displayname: String!, $pictureurl: String!) {
+  createProfile(email: $email, displayname: $displayname, pictureurl: $pictureurl) {
+    ...ProfileDetails
+  }
+}
+
+fragment ProfileDetails on Profile {
+  id
+  email
+  displayname
+  pictureurl
+}
+
+query profile($email: String!) {
+  profile(email: $email) {
+    ...ProfileDetails
+  }
+}
