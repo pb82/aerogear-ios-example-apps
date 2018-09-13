@@ -28,6 +28,7 @@
 		88237365213684A400E07C2A /* CommentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88237364213684A400E07C2A /* CommentsTableViewController.swift */; };
 		882373672136997100E07C2A /* CommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882373662136997100E07C2A /* CommentsViewController.swift */; };
 		882373692136B08200E07C2A /* CommentsViewController.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 882373682136B08200E07C2A /* CommentsViewController.graphql */; };
+		8A49CD4B2146B3EC0002541E /* LoginViewController.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 8A49CD4A2146B3EC0002541E /* LoginViewController.graphql */; };
 		8AB761C6213F113900B60A16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A58B0B320EC18CA00ABE5B1 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +71,7 @@
 		88237364213684A400E07C2A /* CommentsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsTableViewController.swift; sourceTree = "<group>"; };
 		882373662136997100E07C2A /* CommentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsViewController.swift; sourceTree = "<group>"; };
 		882373682136B08200E07C2A /* CommentsViewController.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = CommentsViewController.graphql; sourceTree = "<group>"; };
+		8A49CD4A2146B3EC0002541E /* LoginViewController.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; name = LoginViewController.graphql; path = Memeolist/view/login/LoginViewController.graphql; sourceTree = SOURCE_ROOT; };
 		8A58B0B320EC18CA00ABE5B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		944BD0AFF97A08EC8B3F287D /* Pods_MemeolistTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MemeolistTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -107,6 +109,7 @@
 			children = (
 				0195B0E720F4E040000740E4 /* LoginViewController.swift */,
 				0195B0E820F4E040000740E4 /* LoginViewController.xib */,
+				8A49CD4A2146B3EC0002541E /* LoginViewController.graphql */,
 			);
 			name = login;
 			path = "New Group";
@@ -304,6 +307,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A49CD4B2146B3EC0002541E /* LoginViewController.graphql in Resources */,
 				882373692136B08200E07C2A /* CommentsViewController.graphql in Resources */,
 				1EA7037C212EFA6500BA8473 /* MemesTableViewCell.graphql in Resources */,
 				0195B0EA20F4E040000740E4 /* LoginViewController.xib in Resources */,
@@ -597,7 +601,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Memeolist/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.aerogear.memeolist.Memeolist;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -613,7 +620,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Memeolist/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.aerogear.memeolist.Memeolist;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -630,7 +640,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HT7PDSM4X9;
 				INFOPLIST_FILE = MemeolistTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.aerogear.memeolist.MemeolistTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -648,7 +662,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HT7PDSM4X9;
 				INFOPLIST_FILE = MemeolistTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.aerogear.memeolist.MemeolistTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

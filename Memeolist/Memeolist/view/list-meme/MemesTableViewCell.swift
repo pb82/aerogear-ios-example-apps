@@ -15,13 +15,12 @@ class MemesTableViewCell: UITableViewCell {
 
     func configure(with meme: MemeDetails) {
         memeId = meme.id
+        memeNumberOfLikes = meme.likes
         
         avatarImageView.kf.setImage(with: URL(string: meme.owner[0].pictureurl!), placeholder: UIImage(named: "loading"))
         avatarImageView.layer.cornerRadius = 25;
         avatarImageView.layer.masksToBounds = true;
         userLabel?.text = meme.owner[0].displayname
-        
-        memeNumberOfLikes = meme.likes
         
         memeImageView.kf.setImage(with: URL(string: meme.photourl), placeholder: UIImage(named: "loading"))
         
@@ -31,8 +30,7 @@ class MemesTableViewCell: UITableViewCell {
     }
 
     @IBAction func upvote(_ sender: UIButton) {
-        guard let memeId = memeId else { return }
-        AgsSync.instance.client?.perform(mutation: LikeMemeMutation(memeId: memeId)) { result, error in
+        AgsSync.instance.client?.perform(mutation: LikeMemeMutation(memeId: memeId!)) { result, error in
             if let err = result?.errors {
                 print("Error:", err)
             } else {
