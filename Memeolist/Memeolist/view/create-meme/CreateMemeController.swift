@@ -62,13 +62,15 @@ class CreateMemeController: UIViewController,
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         AgsSync.instance.client?.perform(mutation: CreateMemeMutation(photourl: url, owner: appDelegate.profile.id)) { result, error in
             indicator.stopAnimating()
-            if result != nil {
-                self.navigationController?.popToRootViewController(animated: true)
-            } else {
+            
+            if result?.errors != nil || error != nil {
                 let alert = UIAlertController(title: "Error", message: "Failed to create meme", preferredStyle: UIAlertControllerStyle.alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .default))
                 self.present(alert, animated: true)
+            } else {
+                self.navigationController?.popToRootViewController(animated: true)
             }
+
             return
         }
     
