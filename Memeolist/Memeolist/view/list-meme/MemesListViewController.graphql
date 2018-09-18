@@ -1,9 +1,3 @@
-query AllMemes {
-  allMemes {
-    ...MemeDetails
-  }
-}
-
 fragment MemeDetails on Meme {
   id
   photourl
@@ -14,10 +8,11 @@ fragment MemeDetails on Meme {
     email
     pictureurl
   }
-  comments {
-    id
-    comment
-    owner
+}
+
+query AllMemes {
+  allMemes {
+    ...MemeDetails
   }
 }
 

@@ -22,8 +22,7 @@ class CreateMemeController: UIViewController,
         NSAttributedStringKey.strokeColor : UIColor.black,
         NSAttributedStringKey.foregroundColor : UIColor.white,
         NSAttributedStringKey.strokeWidth : -2.0,
-        ]
-
+    ]
 
     override func viewDidLoad() {
         super.viewDidLoad()

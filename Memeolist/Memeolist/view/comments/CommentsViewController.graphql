@@ -1,8 +1,22 @@
-## Posting comment
-mutation postComment($memeid: ID!, $comment: String!, $owner: String!){
-    postComment(memeid: $memeid, comment: $comment, owner: $owner){
-        id
-        comment
-        owner
-    }
+fragment CommentDetails on Comment {
+  id
+  comment
+  owner {
+    id
+    displayname
+    email
+    pictureurl
+  }
+}
+
+query comments($memeid: ID!) {
+  comments(memeid: $memeid) {
+    ...CommentDetails
+  }
+}
+
+mutation postComment($memeid: ID!, $comment: String!, $owner: ID!) {
+  postComment(memeid: $memeid, comment: $comment, owner: $owner) {
+    ...CommentDetails
+  }
 }

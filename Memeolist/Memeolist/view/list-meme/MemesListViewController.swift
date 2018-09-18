@@ -51,7 +51,7 @@ class MemesListViewController: UITableViewController {
             }
             
             if let memeDetails = result?.data?.memeAdded.fragments.memeDetails {
-                self.memes.insert(MemeDetails(id: memeDetails.id, photourl: memeDetails.photourl, likes: memeDetails.likes, owner: memeDetails.owner, comments: []), at: 0)
+                self.memes.insert(memeDetails, at: 0)
             }
             self.tableView.reloadData()
         })
@@ -66,12 +66,12 @@ class MemesListViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? MemesTableViewCell else {
-            fatalError("Could not dequeue PostTableViewCell")
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "MemesTableViewCell", for: indexPath) as? MemesTableViewCell else {
+            fatalError("Could not dequeue MemesTableViewCell")
         }
 
         guard let meme = memes[indexPath.row] else {
-            fatalError("Could not find post at row \(indexPath.row)")
+            fatalError("Could not find meme at row \(indexPath.row)")
         }
 
         cell.configure(with: meme)
