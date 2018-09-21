@@ -17,10 +17,10 @@ class MemesTableViewCell: UITableViewCell {
         memeId = meme.id
         memeNumberOfLikes = meme.likes
         
-        avatarImageView.kf.setImage(with: URL(string: meme.owner[0].pictureurl!), placeholder: UIImage(named: "loading"))
-        avatarImageView.layer.cornerRadius = 25;
-        avatarImageView.layer.masksToBounds = true;
-        userLabel?.text = meme.owner[0].displayname
+        avatarImageView.kf.setImage(with: URL(string: meme.owner.pictureurl!), placeholder: UIImage(named: "loading"))
+        avatarImageView.layer.cornerRadius = avatarImageView.frame.size.width / 2;
+        avatarImageView.clipsToBounds = true;
+        userLabel?.text = meme.owner.displayname
         
         memeImageView.kf.setImage(with: URL(string: meme.photourl), placeholder: UIImage(named: "loading"))
         

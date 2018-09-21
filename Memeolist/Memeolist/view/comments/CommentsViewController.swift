@@ -5,13 +5,19 @@ class CommentsViewController: UIViewController {
     
     var meme: MemeDetails?
     var tableViewController: CommentsTableViewController?
+    var appDelegate = UIApplication.shared.delegate as! AppDelegate
 
-    @IBOutlet weak var commentTextView: UITextView!
+    @IBOutlet weak var avatar: UIImageView!
+    @IBOutlet weak var commentTextView: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         self.navigationItem.title = "Comments"
+        
+        avatar.kf.setImage(with: URL(string: appDelegate.profile.pictureurl!), placeholder: UIImage(named: "loading"))
+        avatar.layer.cornerRadius = avatar.frame.size.width / 2;
+        avatar.clipsToBounds = true;
     }
 
     override func didReceiveMemoryWarning() {
@@ -19,13 +25,13 @@ class CommentsViewController: UIViewController {
     }
     
     @IBAction func addButtonClicked(_ sender: Any) {
-        guard let id = meme?.id, let owner = meme?.owner[0].id else { return }
+        let id = meme?.id
+        let owner = appDelegate.profile.id
         
-        AgsSync.instance.client?.perform(mutation: PostCommentMutation(memeid: id, comment: commentTextView.text, owner: owner)) { result, error in
-            if let comment = result?.data?.postComment {
+        AgsSync.instance.client?.perform(mutation: PostCommentMutation(memeid: id!, comment: commentTextView.text!, owner: owner)) { result, error in
+            if let comment = result?.data?.postComment.fragments.commentDetails {
                 self.commentTextView.text = ""
-                self.meme?.comments.insert(MemeDetails.Comment(id: comment.id, comment: comment.comment, owner: comment.owner), at: 0)
-                self.tableViewController?.meme = self.meme
+                self.tableViewController?.comments.insert(comment, at: 0)
                 self.tableViewController?.tableView.reloadData()
             } else {
                 let alert = UIAlertController(title: "Error", message: "Failed to post comment", preferredStyle: UIAlertControllerStyle.alert)
